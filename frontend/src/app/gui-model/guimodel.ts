@@ -86,6 +86,41 @@ export class GuiModel {
                             "name": "Ok"
                         }
                     ]
+                },                
+                {
+                    "id": "PoschtieintragForm",
+                    "title": { default: "Poschten" },
+                    "url": "/poschten",
+                    "formFieldList": [
+                        {
+                            "id":   "title",
+                            "type": "text",
+                            "name": { default: "Bezeichnung" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "description",
+                            "type": "text",
+                            "name": { default: "Details" },
+                            "newRow": true,
+                            "maxLength": 4000,
+                            "height": 4,
+                            "width": 2
+                        },
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
                 },
             ],
             "pageList": [
@@ -107,7 +142,45 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Poschti-Liste" },
+                            "icon": "fa-warehouse",
+                            "color": "carrot",
+                            "page": "poschtiPage",
+                            "width": 2,
+                            "newRow": true,
+                        },
                     ]
+                },
+                {
+                    "id": "poschtiPage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neuer Eintrag"},
+                            "icon": "fa-cart-plus",
+                            "color": "orange",
+                            "width": 2,
+                            "form" : {
+                                "form" : "PoschtieintragForm"
+                             }
+                        },
+                        {
+                            "type": "list",
+                            "name": "Poschtiliste",
+                            "icon": "fa-cart-plus",
+                            "color": "orange",
+                            "search": true,
+                            "url": "/todo",
+                            "form": {
+                                    "form": "PoschtieintragForm"
+                            }
+                        }
+                    ]    
                 },
                 {
                     "id": "toDoPage",

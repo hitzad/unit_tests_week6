@@ -50,8 +50,8 @@ public class EinkaufController {
         this.einkauf.put(id, einkauf);
     }
 
-    @DeleteMapping("/einkaufen/todo/{key}")
-    public Einkauf deleteTodo(@PathVariable Integer id) {
+    @DeleteMapping("/einkaufen/{key}")
+    public Einkauf deleteEinkauf(@PathVariable Integer id) {
         return this.einkauf.remove(id);
     }
 }

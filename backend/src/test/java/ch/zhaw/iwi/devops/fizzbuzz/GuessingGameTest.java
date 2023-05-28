@@ -52,6 +52,12 @@ public class GuessingGameTest {
         Assertions.assertEquals("Du bist sehr nahe dran!", test.guess(9));
     }
 
+    @Test
+    public void GuessingGameEight() {
+        GuessingGame test = new GuessingGame();
+        Assertions.assertEquals("Du bist nahe dran!", test.guess(8));
+    }
+
 /* 
     @Test
     public void GuessingGameDefault() {

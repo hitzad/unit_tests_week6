@@ -29,9 +29,7 @@ public class Einkauf {
         return title;
     }
 
-    /*
     public String getDescription() {
         return description;
     }
-    */
 }

@@ -6,7 +6,7 @@ public class GuessingGame {
         if (number == 10){
             return "Das ist korrekt!";
         }
-        else if (number > 10){
+        else if (number > 10 && number <= 100){
             return "Deine Schätzung ist zu hoch";
         }
 
@@ -15,6 +15,10 @@ public class GuessingGame {
         }
 
         else if (number < 0) {
+            return "Die Eingabe muss eine Zahl wischen 1 und 100 sein";
+        }
+
+        else if (number > 100) {
             return "Die Eingabe muss eine Zahl wischen 1 und 100 sein";
         }
 

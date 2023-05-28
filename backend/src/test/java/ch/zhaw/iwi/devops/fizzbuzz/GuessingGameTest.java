@@ -17,6 +17,12 @@ public class GuessingGameTest {
     public void GuessingGameDefault() {
         GuessingGame test = new GuessingGame();
         Assertions.assertEquals("Das ist nicht die korrekte Eingabe", test.guess(11));
+    }  
+    
+    @Test
+    public void GuessingGameToohigh() {
+        GuessingGame test = new GuessingGame();
+        Assertions.assertEquals("Deine Schätzung ist zu hoch", test.guess(13));
     }    
         
 }

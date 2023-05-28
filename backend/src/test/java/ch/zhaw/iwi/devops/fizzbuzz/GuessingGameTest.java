@@ -34,6 +34,12 @@ public class GuessingGameTest {
         Assertions.assertEquals("Die Eingabe muss eine Zahl wischen 1 und 100 sein", test.guess(234));
     }
 
+    @Test
+    public void GuessingGameOver50() {
+        GuessingGame test = new GuessingGame();
+        Assertions.assertEquals("Deine Eingabe ist viel zu hoch", test.guess(51));
+    }
+
 /* 
     @Test
     public void GuessingGameDefault() {

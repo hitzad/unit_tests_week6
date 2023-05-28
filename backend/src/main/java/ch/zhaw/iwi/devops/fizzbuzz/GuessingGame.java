@@ -6,11 +6,11 @@ public class GuessingGame {
         if (number == 10){
             return "Das ist korrekt!";
         }
-        else if (number > 10 && number <= 50){
+        else if (number > 12 && number <= 50){
             return "Deine Schätzung ist zu hoch";
         }
 
-        else if (number < 9 && number >= 2) {
+        else if (number < 8 && number >= 2) {
             return "Deine Schätzung ist zu tief";
         }
 
@@ -33,6 +33,11 @@ public class GuessingGame {
         else if (number == 9 || number == 11) {
             return "Du bist sehr nahe dran!";
         }
+
+        else if (number == 8 || number == 12) {
+            return "Du bist nahe dran!";
+        }
+
 
         return "Das ist nicht die korrekte Eingabe";
     }

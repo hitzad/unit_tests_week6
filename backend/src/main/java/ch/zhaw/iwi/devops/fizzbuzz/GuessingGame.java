@@ -9,6 +9,10 @@ public class GuessingGame {
         else if (number > 10){
             return "Deine Schätzung ist zu hoch";
         }
+
+        else if (number < 10) {
+            return "Deine Schätzung ist zu tief";
+        }
         return "Das ist nicht die korrekte Eingabe";
     }
 

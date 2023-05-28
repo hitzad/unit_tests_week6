@@ -1,5 +1,7 @@
 package ch.zhaw.iwi.devops.demo;
 
+import java.lang.reflect.Method;
+
 public class Einkauf {
 
     private int id;
@@ -27,8 +29,9 @@ public class Einkauf {
         return title;
     }
 
+    /*
     public String getDescription() {
         return description;
     }
-    
+    */
 }

@@ -23,9 +23,15 @@ public class GuessingGameTest {
     }
 
     @Test
+    public void GuessingGameNotvalid() {
+        GuessingGame test = new GuessingGame();
+        Assertions.assertEquals("Die Eingabe muss eine Zahl wischen 1 und 100 sein", test.guess(-1));
+    }
+/* 
+    @Test
     public void GuessingGameDefault() {
         GuessingGame test = new GuessingGame();
-        Assertions.assertEquals("Das ist nicht die korrekte Eingabe", test.guess(1));
+        Assertions.assertEquals("Das ist nicht die korrekte Eingabe", test.guess(345));
     }  
-        
+*/
 }

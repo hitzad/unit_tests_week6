@@ -40,6 +40,12 @@ public class GuessingGameTest {
         Assertions.assertEquals("Deine Eingabe ist viel zu hoch", test.guess(51));
     }
 
+    @Test
+    public void GuessingGameOne() {
+        GuessingGame test = new GuessingGame();
+        Assertions.assertEquals("Mach es dir nicht so einfach", test.guess(1));
+    }
+
 /* 
     @Test
     public void GuessingGameDefault() {

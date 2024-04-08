@@ -3,7 +3,7 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2024",
+            "title": "Meine persönliche Anwendung",
             "formList": [
                 {
                     "id": "OwnUserForm",
@@ -16,63 +16,47 @@ export class GuiModel {
                     ]
                 },
                 {
-                    "id": "NotImplementedForm",
-                    "title": "Not Implemented",
-                    "url": "/dummyform",
-                    "headerVisible": false,
-                    "footerVisible": false,
-                    "borderStyle": "None",
+                    "id": "ModuleForm",
+                    "title": "Meine Eishockey-Spiele",
                     "formFieldList": [
                         {
-                            "id": "NotImplemented",
-                            "type": "label",
-                            "name": "NotImplementedMessage",
-                            "width": 2
-                        },
-                        {
-                            "type": "okButton",
-                            "name": "Ok"
-                        }
-                    ]
-                },
-                {
-                    "id": "NotImplementedFormModal",
-                    "title": "NotImplemented",
-                    "url": "/dummyform",
-                    "formFieldList": [
-                        {
-                            "id": "NotImplemented",
-                            "type": "label",
-                            "name": "NotImplementedMessage",
-                            "width": 2
-                        },
-                        {
-                            "type": "okButton",
-                            "name": "Ok"
-                        }
-                    ]
-                },
-                {
-                    "id": "ToDoForm",
-                    "title": { default: "ToDo" },
-                    "url": "/todo",
-                    "formFieldList": [
-                        {
-                            "id":   "title",
+                            "id": "moduleName",
                             "type": "text",
-                            "name": { default: "Titel" },
+                            "name": { default: "Spielort" },
                             "required": true,
                             "width": 2
                         },
                         {
-                            "id": "description",
+                            "id": "moduleName",
+                            "type": "date",
+                            "name": { default: "Datum" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "moduleName",
+                            "type": "number",
+                            "name": { default: "Heim" },
+                            "required": true,
+                            "width": 1
+                        },
+                        {
+                            "id": "moduleName",
+                            "type": "number",
+                            "name": { default: "Gast" },
+                            "required": true,
+                            "width": 1
+                        },
+                        {
+                            "id": "moduleDescription",
                             "type": "text",
-                            "name": { default: "Text" },
+                            "name": { default: "Beschreibung" },
                             "newRow": true,
                             "maxLength": 4000,
                             "height": 4,
                             "width": 2
                         },
+                        
                         {
                             "type": "deleteButton",
                             "name": "Delete"
@@ -87,6 +71,48 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "ToDoForm",
+                    "title": "Meine ToDo's",
+                    "formFieldList": [
+                        {
+                            "id": "moduleName",
+                            "type": "text",
+                            "name": { default: "Task" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "moduleName",
+                            "type": "date",
+                            "name": { default: "Bis Wann" },
+                            "required": true,
+                            "width": 2
+                        },
+                        {
+                            "id": "moduleDescription",
+                            "type": "text",
+                            "name": { default: "Beschreibung" },
+                            "newRow": true,
+                            "maxLength": 4000,
+                            "height": 4,
+                            "width": 2
+                        },
+                        
+                        {
+                            "type": "deleteButton",
+                            "name": "Delete"
+                        },
+                        {
+                            "type": "cancelButton",
+                            "name": "Cancel"
+                        },
+                        {
+                            "type": "okButton",
+                            "name": "Ok"
+                        }
+                    ]
+                }
             ],
             "pageList": [
                 {
@@ -95,22 +121,31 @@ export class GuiModel {
                     "elementList": [
                         {
                             "type": "pageLabel",
-                            "value": "<h4>Willkommen bei DevOps</h4>",
+                            "value": "<h4>Übersicht</h4>",
                             "newRow": true
                         },
                         {
                             "type": "button",
-                            "name": { default: "ToDo-List" },
-                            "icon": "fa-file-alt",
-                            "color": "wet-asphalt",
-                            "page": "toDoPage",
+                            "name": { default: "Eishockey" },
+                            "icon": "fa-hockey-puck",
+                            "color": "red",
+                            "page": "modulePage",
                             "width": 2,
                             "newRow": true,
+                        },
+                        {
+                            "type": "button",
+                            "name": { default: "Todo" },
+                            "icon": "fa-calendar-check-o",
+                            "color": "green",
+                            "page": "ToDoPage",
+                            "width": 2,
+                            "newRow": false,
                         },
                     ]
                 },
                 {
-                    "id": "toDoPage",
+                    "id": "ToDoPage",
                     "elementList": [
                         {
                             "type": "backbutton",
@@ -136,6 +171,24 @@ export class GuiModel {
                                 "form": "ToDoForm"
                             }
                         }
+                    ]
+                },
+                {
+                    "id": "modulePage",
+                    "elementList": [
+                        {
+                            "type": "button",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": { default: "Neues Spiel erfassen" },
+                            "icon": "fa-user",
+                            "color": "alizarin",
+                            "width": 2,
+                            "form" : {
+                                "form" : "ModuleForm"
+                            }
+                        },
                     ]
                 },
             ]

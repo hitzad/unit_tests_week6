@@ -55,15 +55,22 @@ public class TicTacToe {
         }
     }
     public boolean checkWin() {
-        // Überprüfe horizontale Linien
+        // Überprüfe horizontale Gewinne
         for (int row = 0; row < 3; row++) {
             if (board[row][0] != '-' && board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
                 return true;
             }
         }
-        // Füge hier die Überprüfungen für vertikale und diagonale Linien hinzu, falls nicht bereits vorhanden
+        // Überprüfe vertikale Gewinne
+        for (int col = 0; col < 3; col++) {
+            if (board[0][col] != '-' && board[0][col] == board[1][col] && board[1][col] == board[2][col]) {
+                return true;
+            }
+        }
+        // Füge zusätzliche Bedingungen für diagonale Gewinne hinzu, falls erforderlich
         return false;
     }
-    
 }
+
+    
 

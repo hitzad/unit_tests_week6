@@ -49,4 +49,15 @@ public class TicTacToeTest {
         game.makeMove(0, 2); // X gewinnt horizontal auf Reihe 0
         assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben"); // Überprüfen, ob der Gewinn erkannt wird
     }
+    @Test
+    public void testWinConditionVertical() {
+        game.makeMove(0, 0); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(1, 0); // X
+        game.makeMove(0, 2); // O
+        assertFalse(game.checkWin(), "Noch sollte niemand gewonnen haben");
+
+        game.makeMove(2, 0); // X gewinnt vertikal in der ersten Spalte (0)
+        assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben durch eine vertikale Linie");
+    }
 }

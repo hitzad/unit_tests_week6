@@ -54,27 +54,43 @@ public class TicTacToe {
             System.out.println();
         }
     }
+
     public boolean checkWin() {
-        // Überprüfe horizontale Gewinne
-        for (int row = 0; row < 3; row++) {
-            if (board[row][0] != '-' && board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != '-') {
+                return true;
+            }
+            if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != '-') {
                 return true;
             }
         }
-        // Überprüfe vertikale Gewinne
-        for (int col = 0; col < 3; col++) {
-            if (board[0][col] != '-' && board[0][col] == board[1][col] && board[1][col] == board[2][col]) {
-                return true;
+        if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != '-') ||
+            (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != '-')) {
+            return true;
+        }
+        return false;
+    }
+    
+    
+
+    public boolean isDraw() {
+        if (checkWin()) {
+            return false; // Kann kein Unentschieden sein, wenn ein Gewinn vorliegt.
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '-') {
+                    return false; // Kann kein Unentschieden sein, wenn ein Feld leer ist.
+                }
             }
         }
-        // Füge zusätzliche Bedingungen für diagonale Gewinne hinzu, falls erforderlich
-        if ((board[0][0] != '-' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) ||
-        (board[0][2] != '-' && board[0][2] == board[1][1] && board[1][1] == board[2][0])) {
-        return true;
+        return true; // Unentschieden, wenn alle Felder besetzt sind und kein Gewinn vorliegt.
     }
-            return false;
-    }
+    
+    
 }
+
+
 
     
 

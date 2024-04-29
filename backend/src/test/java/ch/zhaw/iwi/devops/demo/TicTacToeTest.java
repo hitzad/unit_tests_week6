@@ -81,5 +81,20 @@ public class TicTacToeTest {
         game.makeMove(2, 0); // X gewinnt auf der gegenüberliegenden Diagonalen
         assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben durch eine diagonale Linie auf der anderen Seite");
     }
+    @Test
+    public void testDrawCondition() {
+        game.makeMove(0, 0); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(0, 2); // X
+        game.makeMove(1, 0); // O
+        game.makeMove(1, 2); // X
+        game.makeMove(1, 1); // O
+        game.makeMove(2, 0); // X
+        game.makeMove(2, 2); // O
+        game.makeMove(2, 1); // X
     
+        assertFalse(game.checkWin(), "Es sollte keinen Gewinner geben, da es ein Unentschieden ist.");
+        assertTrue(game.isDraw(), "Das Spiel sollte als Unentschieden enden");
+    }    
+   
 }

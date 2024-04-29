@@ -35,7 +35,7 @@ test {
 jacocoTestReport {
 	reports {
 		xml.required = true
-		csv.required = false 
+		csv.required = false
 		xml.destination(file("${rootProject.projectDir}/target/site/jacoco/cov.xml"))
 	}
 }

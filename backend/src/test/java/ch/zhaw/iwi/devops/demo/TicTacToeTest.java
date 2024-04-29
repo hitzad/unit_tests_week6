@@ -25,6 +25,11 @@ public class TicTacToeTest {
         game.makeMove(0, 0); // Spieler X zieht
         assertEquals('O', game.getCurrentPlayer(), "Spieler O sollte als nächstes dran sein");
     }
-
+    @Test
+    public void testValidMove() {
+        // Überprüfe, ob das Setzen eines Symbols in ein leeres Feld erfolgreich ist
+        boolean moveMade = game.makeMove(0, 0);
+        assertTrue(moveMade, "Das Setzen eines Symbols in ein leeres Feld sollte erfolgreich sein");
+    }
 
 }

@@ -1,18 +1,21 @@
 package ch.zhaw.iwi.devops.demo;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TicTacToeTest {
     private TicTacToe game;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         game = new TicTacToe();
     }
 
     @Test
     public void testInitialBoardIsEmpty() {
-        assertTrue("Das Spielfeld sollte zu Beginn leer sein", game.isBoardEmpty());
+        assertTrue(game.isBoardEmpty(), "Das Spielfeld sollte zu Beginn leer sein");
     }
+}
+
+

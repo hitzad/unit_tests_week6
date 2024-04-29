@@ -16,6 +16,10 @@ public class TicTacToeTest {
     public void testInitialBoardIsEmpty() {
         assertTrue(game.isBoardEmpty(), "Das Spielfeld sollte zu Beginn leer sein");
     }
+    @Test
+    public void testPlayerXStartsFirst() {
+        assertEquals('X', game.getCurrentPlayer(), "Spieler X sollte den ersten Zug machen");
+    }
+
+
 }
-
-

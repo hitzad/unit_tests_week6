@@ -27,9 +27,17 @@ public class TicTacToeTest {
     }
     @Test
     public void testValidMove() {
-        // Überprüfe, ob das Setzen eines Symbols in ein leeres Feld erfolgreich ist
+        // Überprüft, ob das Setzen eines Symbols in ein leeres Feld erfolgreich ist
         boolean moveMade = game.makeMove(0, 0);
         assertTrue(moveMade, "Das Setzen eines Symbols in ein leeres Feld sollte erfolgreich sein");
+    }
+    @Test
+    public void testInvalidMove() {
+        // Erster Zug sollte erfolgreich sein
+        assertTrue(game.makeMove(0, 0), "Erster Zug auf ein leeres Feld sollte erfolgreich sein");
+
+        // Zweiter Zug auf das gleiche Feld sollte fehlschlagen
+        assertFalse(game.makeMove(0, 0), "Weiterer Zug auf besetztes Feld sollte fehlschlagen");
     }
 
 }

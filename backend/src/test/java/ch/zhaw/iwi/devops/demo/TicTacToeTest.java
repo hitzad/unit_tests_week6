@@ -60,4 +60,26 @@ public class TicTacToeTest {
         game.makeMove(2, 0); // X gewinnt vertikal in der ersten Spalte (0)
         assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben durch eine vertikale Linie");
     }
+    @Test
+    public void testWinConditionDiagonal() {
+        // Diagonale von links oben nach rechts unten
+        game.makeMove(0, 0); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(1, 1); // X
+        game.makeMove(0, 2); // O
+        assertFalse(game.checkWin(), "Noch sollte niemand gewonnen haben");
+        game.makeMove(2, 2); // X gewinnt diagonal
+        assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben durch eine diagonale Linie");
+
+        // Setze das Spiel zurück und teste die andere Diagonale
+        game = new TicTacToe();
+        game.makeMove(0, 2); // X
+        game.makeMove(0, 1); // O
+        game.makeMove(1, 1); // X
+        game.makeMove(0, 0); // O
+        assertFalse(game.checkWin(), "Noch sollte niemand gewonnen haben");
+        game.makeMove(2, 0); // X gewinnt auf der gegenüberliegenden Diagonalen
+        assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben durch eine diagonale Linie auf der anderen Seite");
+    }
+    
 }

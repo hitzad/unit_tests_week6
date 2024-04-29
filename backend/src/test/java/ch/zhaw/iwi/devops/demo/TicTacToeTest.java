@@ -96,5 +96,18 @@ public class TicTacToeTest {
         assertFalse(game.checkWin(), "Es sollte keinen Gewinner geben, da es ein Unentschieden ist.");
         assertTrue(game.isDraw(), "Das Spiel sollte als Unentschieden enden");
     }    
-   
+    @Test
+    public void testResetGame() {
+        // Einige Züge machen, um das Spielfeld zu verändern
+        game.makeMove(0, 0); // X
+        game.makeMove(1, 1); // O
+        game.makeMove(2, 2); // X
+
+        // Spiel zurücksetzen
+        game.resetGame();
+
+        // Überprüfen, ob das Spielfeld leer ist und Spieler X beginnt
+        assertTrue(game.isBoardEmpty(), "Das Spielfeld sollte nach dem Zurücksetzen leer sein.");
+        assertEquals('X', game.getCurrentPlayer(), "Spieler X sollte nach dem Zurücksetzen der erste Spieler sein.");
+    }
 }

@@ -20,6 +20,11 @@ public class TicTacToeTest {
     public void testPlayerXStartsFirst() {
         assertEquals('X', game.getCurrentPlayer(), "Spieler X sollte den ersten Zug machen");
     }
+    @Test
+    public void testPlayersAlternateTurns() {
+        game.makeMove(0, 0); // Spieler X zieht
+        assertEquals('O', game.getCurrentPlayer(), "Spieler O sollte als nächstes dran sein");
+    }
 
 
 }

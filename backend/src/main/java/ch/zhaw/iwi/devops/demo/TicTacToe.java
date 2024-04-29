@@ -54,5 +54,16 @@ public class TicTacToe {
             System.out.println();
         }
     }
+    public boolean checkWin() {
+        // Überprüfe horizontale Linien
+        for (int row = 0; row < 3; row++) {
+            if (board[row][0] != '-' && board[row][0] == board[row][1] && board[row][1] == board[row][2]) {
+                return true;
+            }
+        }
+        // Füge hier die Überprüfungen für vertikale und diagonale Linien hinzu, falls nicht bereits vorhanden
+        return false;
+    }
+    
 }
 

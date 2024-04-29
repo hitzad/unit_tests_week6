@@ -39,5 +39,14 @@ public class TicTacToeTest {
         // Zweiter Zug auf das gleiche Feld sollte fehlschlagen
         assertFalse(game.makeMove(0, 0), "Weiterer Zug auf besetztes Feld sollte fehlschlagen");
     }
-
+    @Test
+    public void testWinConditionHorizontal() {
+        game.makeMove(0, 0); // X
+        game.makeMove(1, 0); // O
+        game.makeMove(0, 1); // X
+        game.makeMove(1, 1); // O
+        assertFalse(game.checkWin(), "Noch sollte niemand gewonnen haben"); // Erst prüfen, dass noch kein Gewinn vorliegt
+        game.makeMove(0, 2); // X gewinnt horizontal auf Reihe 0
+        assertTrue(game.checkWin(), "Spieler X sollte gewonnen haben"); // Überprüfen, ob der Gewinn erkannt wird
+    }
 }
